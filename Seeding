@@ -1,0 +1,11 @@
+def seed(x,y):
+    mul=1
+    for i in x:
+        mul=mul*int(i)
+    mul=mul*int(x)
+    if mul==int(y):
+        return "True"
+    else:
+        return "False"
+x,y=input().split(',')
+print(seed(x,y))
