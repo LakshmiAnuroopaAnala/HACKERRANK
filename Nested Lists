@@ -1,0 +1,35 @@
+def check(name,score):   
+    mi=min(score)
+    ma=max(score)
+    for i in range(0,len(score)):
+        if score[i]==mi:
+            score[i]=ma
+    new=[]    
+    mi=min(score)       
+    for i in range(0,len(score)):
+        if score[i]==mi:
+            new.append(name[i])
+    new.sort()      
+    for i in new:
+        print(i)     
+
+if __name__ == '__main__':
+    name=[]
+    score=[]
+    for _ in range(int(input())):
+        name.append(input())
+        score.append(float(input()))
+    #score=float(score)
+    k=set(score)
+    ne=[]
+    if len(k)==2:
+        m=max(score)
+        for i in range(0,len(score)):
+             if score[i]==m:
+                  ne.append(name[i]) 
+        ne.sort()      
+        for i in ne:
+            print(i)
+    else:
+        check(name,score)
+   
