@@ -1,0 +1,15 @@
+def pickingNumbers(a):
+    # Write your code here
+    frq=dict()
+    for i in range(0,101):
+        frq[i]=0
+    for i in a:
+        frq[i]=frq[i]+1
+    r=0
+    for i in range(1,101):
+        r=max(r,frq[i]+frq[i-1])
+    #print(frq)
+    return r
+    
+a=list(map(int,input().split("")))
+print(pickingNumbers(a))
