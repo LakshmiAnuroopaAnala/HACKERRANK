@@ -1,0 +1,10 @@
+def beautifulDays(i, j, k):
+    # Write your code here
+    c=0
+    for a in range(i,j+1):
+       a=str(a)
+       rev=a[::-1]
+       r=int(rev)
+       if (int(a)-r)%k==0:
+        c=c+1
+    return c 
