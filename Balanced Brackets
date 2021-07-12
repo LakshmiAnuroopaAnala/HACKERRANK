@@ -1,0 +1,46 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'isBalanced' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts STRING s as parameter.
+#
+
+def isBalanced(s):
+    # Write your code here
+    if len(s)<2:
+            return "NO"
+    start=['[','(','{']
+    end=[']',')','}']
+    d={'}':'{',')':'(',']':'['}
+    stack=[]
+    for i in s:
+        if i in start:
+             stack.append(i)
+        elif (len(stack)>0) and (stack[len(stack)-1]=='{' and i=='}'): 
+            stack.pop()
+        elif (len(stack)>0) and (stack[len(stack)-1]=='[' and i==']'): 
+            stack.pop()
+        elif (len(stack)>0) and (stack[len(stack)-1]=='(' and i==')'): 
+            stack.pop()    
+        else:
+            return "NO"
+    if len(stack)==0:
+        return "YES"
+    else:
+        return "NO"
+
+if __name__ == '__main__': 
+
+    t = int(input().strip())
+    for t_itr in range(t):
+        s = input()
+        result = isBalanced(s)
+        print(result)
