@@ -1,0 +1,16 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import defaultdict
+n,m=input().split(" ")
+d= defaultdict(list)
+l=[]
+for i in range(0,int(n)):
+    d[input()].append(i+1)
+for i in range(int(m)):
+    l.append(input())
+for i in l:
+    if i in d:
+        print (" ".join( map(str,d[i]) ))
+    else:
+        print("-1")
+    
+
